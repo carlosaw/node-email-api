@@ -14,8 +14,9 @@ export const contato = async (req: Request, res: Response) => {
 
   // Passo 2: Configurar a mensagem
   let message = {
-    from: 'não-responda@aw2web.com.br',// Quem envia
+    from: 'não-responda@aw2web.com',// Quem envia
     to: 'carlosfreevg@gmail.com',//Quem recebe
+    replyTo: req.body.from,
     subject: req.body.subject,//Assunto
     html: req.body.email,
     text: req.body.email
